@@ -2,5 +2,11 @@ Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
 
+0.002     2014-08-15 20:39:39-04:00 America/New_York
+    - include additional metadata
+    - test that module can compile properly
+    - specify minimum perl version number
+    - include README file
+
 0.001     2013-02-11 21:10:05 America/New_York
     - Initial CPAN release
