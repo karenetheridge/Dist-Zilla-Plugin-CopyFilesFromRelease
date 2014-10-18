@@ -1,6 +1,7 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+    - dump configs into metadata (Karen Etheridge)
 
 0.002     2014-08-15 20:39:39-04:00 America/New_York
     - include additional metadata
