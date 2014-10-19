@@ -1,4 +1,5 @@
 package Dist::Zilla::Plugin::CopyFilesFromRelease;
+
 use 5.008;
 use strict;
 use warnings;
