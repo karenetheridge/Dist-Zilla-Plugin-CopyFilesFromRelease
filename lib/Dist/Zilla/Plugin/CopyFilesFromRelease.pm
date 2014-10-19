@@ -27,6 +27,19 @@ has match => (
     default    => sub { [] },
 );
 
+around dump_config => sub {
+    my $orig = shift;
+    my $self = shift;
+
+    my $config = $self->$orig;
+
+    $config->{+__PACKAGE__} = {
+        map { $_ => $self->$_ } qw(filename match),
+    };
+
+    return $config;
+};
+
 sub after_release {
     my $self = shift;
     my $built_in = $self->zilla->ensure_built;
