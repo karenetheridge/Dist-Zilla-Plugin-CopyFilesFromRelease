@@ -7,7 +7,6 @@ use warnings;
 # ABSTRACT: Copy files from a release (for SCM inclusion, etc.)
 
 use Moose;
-use Moose::Autobox;
 with qw/ Dist::Zilla::Role::AfterRelease /;
 
 use File::Copy ();
