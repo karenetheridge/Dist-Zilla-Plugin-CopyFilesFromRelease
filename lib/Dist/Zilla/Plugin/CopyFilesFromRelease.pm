@@ -10,6 +10,7 @@ use Moose;
 with qw/ Dist::Zilla::Role::AfterRelease /;
 
 use File::Copy ();
+use Path::Tiny;
 
 sub mvp_multivalue_args { qw{ filename match } }
 
@@ -49,19 +50,18 @@ sub after_release {
     $file_match = join '|', '^(?:' . $file_match . ')$', @{ $self->match };
     $file_match = qr/$file_match/;
 
-    $built_in->recurse( callback => sub {
-        my $file = shift;
-        return
-            if $file->is_dir;
+    my $iterator = path($built_in)->iterator({ recurse => 1 });
+    while (my $file = $iterator->()) {
+        next if -d $file;
+
         my $rel_path = $file->relative($built_in);
-        my $unix_style = $rel_path->as_foreign('Unix');
         return
-            unless $unix_style =~ $file_match;
-        my $dest = $root->file($rel_path);
+            unless $rel_path =~ $file_match;
+        my $dest = path($root, $rel_path);
         File::Copy::copy("$file", "$dest")
             or $self->log_fatal("Unable to copy $file to $dest: $!");
         $self->log("Copied $file to $dest");
-    });
+    }
 }
 
 __PACKAGE__->meta->make_immutable;
