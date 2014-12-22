@@ -1,6 +1,9 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+    - use Path::Tiny rather than relying on Dist::Zilla giving us
+      Path::Class objects (PR#3 Karen Etheridge)
+    - stop loading (unused) Moose::Autobox (PR#4 Karen Etheridge)
 
 0.003     2014-10-19 03:28:43-04:00 America/New_York
     - dump configs into metadata (Karen Etheridge)
