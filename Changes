@@ -1,6 +1,8 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+
+0.004     2014-12-21 21:15:06-05:00 America/New_York
     - use Path::Tiny rather than relying on Dist::Zilla giving us
       Path::Class objects (PR#3 Karen Etheridge)
     - stop loading (unused) Moose::Autobox (PR#4 Karen Etheridge)
