@@ -1,6 +1,8 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+
+0.005     2015-01-05 11:42:27-08:00 America/Vancouver
     - iterator now once again works properly when skipping some files
       (error introduced in 0.004)
 
