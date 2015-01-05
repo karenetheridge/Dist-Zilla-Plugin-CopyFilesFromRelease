@@ -55,7 +55,7 @@ sub after_release {
         next if -d $file;
 
         my $rel_path = $file->relative($built_in);
-        return
+        next
             unless $rel_path =~ $file_match;
         my $dest = path($root, $rel_path);
         File::Copy::copy("$file", "$dest")

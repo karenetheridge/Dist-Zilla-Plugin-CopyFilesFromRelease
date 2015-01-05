@@ -1,6 +1,8 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+    - iterator now once again works properly when skipping some files
+      (error introduced in 0.004)
 
 0.004     2014-12-21 21:15:06-05:00 America/New_York
     - use Path::Tiny rather than relying on Dist::Zilla giving us
