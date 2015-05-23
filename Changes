@@ -1,24 +1,24 @@
-Revision history for Perl extension {{$dist->name}}
+Revision history for Dist-Zilla-Plugin-CopyFilesFromRelease
 
 {{$NEXT}}
 
-0.005     2015-01-05 11:42:27-08:00 America/Vancouver
+0.005     2015-01-05 19:42:27Z
     - iterator now once again works properly when skipping some files
       (error introduced in 0.004)
 
-0.004     2014-12-21 21:15:06-05:00 America/New_York
+0.004     2014-12-22 02:15:06Z
     - use Path::Tiny rather than relying on Dist::Zilla giving us
       Path::Class objects (PR#3 Karen Etheridge)
     - stop loading (unused) Moose::Autobox (PR#4 Karen Etheridge)
 
-0.003     2014-10-19 03:28:43-04:00 America/New_York
+0.003     2014-10-19 07:28:43Z
     - dump configs into metadata (Karen Etheridge)
 
-0.002     2014-08-15 20:39:39-04:00 America/New_York
+0.002     2014-08-16 00:39:39Z
     - include additional metadata
     - test that module can compile properly
     - specify minimum perl version number
     - include README file
 
-0.001     2013-02-11 21:10:05 America/New_York
+0.001     2013-02-12 02:10:05Z
     - Initial CPAN release
