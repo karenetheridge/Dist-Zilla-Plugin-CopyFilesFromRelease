@@ -1,6 +1,7 @@
 Revision history for Dist-Zilla-Plugin-CopyFilesFromRelease
 
 {{$NEXT}}
+    - now with unit tests! :)
 
 0.005     2015-01-05 19:42:27Z
     - iterator now once again works properly when skipping some files
