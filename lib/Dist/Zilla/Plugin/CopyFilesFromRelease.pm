@@ -1,5 +1,7 @@
 package Dist::Zilla::Plugin::CopyFilesFromRelease;
 
+our $VERSION = '0.006';
+
 use 5.008;
 use strict;
 use warnings;

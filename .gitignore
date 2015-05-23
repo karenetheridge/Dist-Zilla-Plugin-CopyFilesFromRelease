@@ -1,2 +1,4 @@
+/.ackrc
 /.build
+/.latest
 /Dist-Zilla-Plugin-CopyFilesFromRelease-*
