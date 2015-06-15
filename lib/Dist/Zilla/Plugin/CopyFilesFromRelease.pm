@@ -13,19 +13,12 @@ use Path::Tiny;
 
 sub mvp_multivalue_args { qw{ filename match } }
 
-has filename => (
+has $_ => (
     is => 'ro',
     lazy => 1,
     isa        => 'ArrayRef[Str]',
     default    => sub { [] },
-);
-
-has match => (
-    is => 'ro',
-    lazy => 1,
-    isa        => 'ArrayRef[Str]',
-    default    => sub { [] },
-);
+) foreach qw(filename match);
 
 around dump_config => sub {
     my $orig = shift;
