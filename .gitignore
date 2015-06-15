@@ -1,4 +1,6 @@
 /.ackrc
-/.build
+/.build/
+!/.gitignore
 /.latest
-/Dist-Zilla-Plugin-CopyFilesFromRelease-*
+/Dist-Zilla-Plugin-CopyFilesFromRelease-*/
+/Dist-Zilla-Plugin-CopyFilesFromRelease-*.tar.gz
