@@ -1,11 +1,9 @@
-package Dist::Zilla::Plugin::CopyFilesFromRelease;
-
-our $VERSION = '0.006';
-
 use strict;
 use warnings;
-
+package Dist::Zilla::Plugin::CopyFilesFromRelease;
 # ABSTRACT: Copy files from a release (for SCM inclusion, etc.)
+
+our $VERSION = '0.006';
 
 use Moose;
 with qw/ Dist::Zilla::Role::AfterRelease /;
