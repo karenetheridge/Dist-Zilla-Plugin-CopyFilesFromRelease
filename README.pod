@@ -1,0 +1,54 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Dist::Zilla::Plugin::CopyFilesFromRelease - Copy files from a release (for SCM inclusion, etc.)
+
+=head1 VERSION
+
+version 0.006
+
+=head1 SYNOPSIS
+
+In your dist.ini:
+
+    [CopyFilesFromRelease]
+    filename = README
+    match = ^MANIFEST*
+
+=head1 DESCRIPTION
+
+This plugin will automatically copy the files that you specify in
+dist.ini from the build directory into the distribution directoory.
+This is so you can commit them to version control.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::Plugin::CopyFilesFromBuild> - The basis for this module
+
+=back
+
+=head1 AUTHOR
+
+Graham Knop <haarg@haarg.org>
+
+=head1 CONTRIBUTOR
+
+=for stopwords Karen Etheridge
+
+Karen Etheridge <ether@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Graham Knop.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
