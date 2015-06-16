@@ -14,10 +14,11 @@ use Path::Tiny;
 sub mvp_multivalue_args { qw{ filename match } }
 
 has $_ => (
-    is => 'ro',
     lazy => 1,
     isa        => 'ArrayRef[Str]',
     default    => sub { [] },
+    traits => ['Array'],
+    handles => { $_ => 'sort' },
 ) foreach qw(filename match);
 
 around dump_config => sub {
@@ -27,7 +28,7 @@ around dump_config => sub {
     my $config = $self->$orig;
 
     $config->{+__PACKAGE__} = {
-        map { $_ => $self->$_ } qw(filename match),
+        map { $_ => [ $self->$_ ] } qw(filename match),
     };
 
     return $config;
@@ -38,8 +39,8 @@ sub after_release {
     my $built_in = $self->zilla->ensure_built;
     my $root = $self->zilla->root;
 
-    my $file_match = join '|', map quotemeta, @{ $self->filename };
-    $file_match = join '|', '^(?:' . $file_match . ')$', @{ $self->match };
+    my $file_match = join '|', map quotemeta, $self->filename;
+    $file_match = join '|', '^(?:' . $file_match . ')$', $self->match;
     $file_match = qr/$file_match/;
 
     my $iterator = path($built_in)->iterator({ recurse => 1 });
