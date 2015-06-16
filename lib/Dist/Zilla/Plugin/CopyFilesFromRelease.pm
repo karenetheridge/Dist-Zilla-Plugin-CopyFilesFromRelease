@@ -2,6 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::CopyFilesFromRelease;
 # ABSTRACT: Copy files from a release (for SCM inclusion, etc.)
+# KEYWORDS: plugin copy files repository distribution release
 
 our $VERSION = '0.006';
 
