@@ -64,6 +64,9 @@ __END__
 
 =pod
 
+=for :header
+=for stopwords SCM
+
 =head1 SYNOPSIS
 
 In your dist.ini:
@@ -75,7 +78,7 @@ In your dist.ini:
 =head1 DESCRIPTION
 
 This plugin will automatically copy the files that you specify in
-dist.ini from the build directory into the distribution directoory.
+dist.ini from the build directory into the distribution directory.
 This is so you can commit them to version control.
 
 =head1 SEE ALSO
