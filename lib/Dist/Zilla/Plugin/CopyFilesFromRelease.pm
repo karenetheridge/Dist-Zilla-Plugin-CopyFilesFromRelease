@@ -11,6 +11,7 @@ with qw/ Dist::Zilla::Role::AfterRelease /;
 
 use File::Copy ();
 use Path::Tiny;
+use namespace::autoclean;
 
 sub mvp_multivalue_args { qw{ filename match } }
 
@@ -59,9 +60,9 @@ sub after_release {
 }
 
 __PACKAGE__->meta->make_immutable;
-no Moose;
-1;
 __END__
+
+=pod
 
 =head1 SYNOPSIS
 
@@ -81,3 +82,5 @@ This is so you can commit them to version control.
 
 =for :list
 * L<Dist::Zilla::Plugin::CopyFilesFromBuild> - The basis for this module
+
+=cut
