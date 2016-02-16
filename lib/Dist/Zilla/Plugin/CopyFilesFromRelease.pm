@@ -31,6 +31,7 @@ around dump_config => sub {
 
     $config->{+__PACKAGE__} = {
         map { $_ => [ $self->$_ ] } qw(filename match),
+        blessed($self) ne __PACKAGE__ ? ( version => $VERSION ) : (),
     };
 
     return $config;
