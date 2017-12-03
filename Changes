@@ -1,6 +1,7 @@
 Revision history for Dist-Zilla-Plugin-CopyFilesFromRelease
 
 {{$NEXT}}
+    - minor updates to distribution packaging
 
 0.006     2015-06-16 01:26:52Z
     - now with unit tests! :)
