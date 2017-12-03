@@ -9,8 +9,7 @@ our $VERSION = '0.007';
 use Moose;
 with qw/ Dist::Zilla::Role::AfterRelease /;
 
-use File::Copy ();
-use Path::Tiny;
+use Path::Tiny 0.070;
 use namespace::autoclean;
 
 sub mvp_multivalue_args { qw{ filename match } }
@@ -55,7 +54,7 @@ sub after_release {
         next
             unless $rel_path =~ $file_match;
         my $dest = path($root, $rel_path);
-        File::Copy::copy("$file", "$dest")
+        $file->copy($dest)
             or $self->log_fatal("Unable to copy $file to $dest: $!");
         $self->log("Copied $file to $dest");
     }
