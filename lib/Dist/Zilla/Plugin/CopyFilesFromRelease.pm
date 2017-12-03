@@ -39,18 +39,19 @@ around dump_config => sub {
 
 sub after_release {
     my $self = shift;
-    my $built_in = $self->zilla->ensure_built;
+
+    my $build_dir = $self->zilla->built_in;
     my $root = $self->zilla->root;
 
     my $file_match = join '|', map quotemeta, $self->filename;
     $file_match = join '|', '^(?:' . $file_match . ')$', $self->match;
     $file_match = qr/$file_match/;
 
-    my $iterator = path($built_in)->iterator({ recurse => 1 });
+    my $iterator = path($build_dir)->iterator({ recurse => 1 });
     while (my $file = $iterator->()) {
         next if -d $file;
 
-        my $rel_path = $file->relative($built_in);
+        my $rel_path = $file->relative($build_dir);
         next
             unless $rel_path =~ $file_match;
         my $dest = path($root, $rel_path);
