@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-Plugin-CopyFilesFromRelease
 
+{{$NEXT}}
+
 0.007     2017-12-03 07:00:43Z
     - minor updates to distribution packaging
 

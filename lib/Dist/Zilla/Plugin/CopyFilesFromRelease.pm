@@ -4,7 +4,7 @@ package Dist::Zilla::Plugin::CopyFilesFromRelease;
 # ABSTRACT: Copy files from a release (for SCM inclusion, etc.)
 # KEYWORDS: plugin copy files repository distribution release
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 use Moose;
 with qw/ Dist::Zilla::Role::AfterRelease /;
